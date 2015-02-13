@@ -1,0 +1,106 @@
+#     
+# Aliases    
+#     
+
+# alias typos   
+alias alais="alias"
+alias alise="alias"
+alias mc="mv"
+
+#
+# login
+#
+alias dkftp="echo \"thiculm94w22\" && echo \" \" && ssh twohlever@upload.clcbio.com" 
+alais bigmac="ssh -x cakelove@23.25.245.170"
+
+
+
+#
+# CLC
+#
+
+alias GxServer="clcserver -U root -P 7777 -W default -S localhost"
+
+ 
+#     
+# Simple Shortcuts    
+#     
+
+alias vic="vi ~/.bashrc"
+
+alias scap="screencapture -s -t pdf ~/Desktop/ScreenCapture.pdf"
+alias scapt="screencapture -s -t pdf -T 3 ~/Desktop/ScreenCapture.pdf"
+    
+alias s="source ~/.bashrc"  
+    
+alias hm="history | more"  
+alias hg="history | grep"  
+    
+alias lg="ll | grep "
+alias lls="ll" 
+alias ag="cat ~/.aliases | grep" 
+    
+
+alias p=pwd
+alias cls=clear    
+alias c=clear
+alias lo=logout    
+alias e=exit    
+    
+alias m=more    
+alias mr="more *[Rr][Ee][Aa][Dd][Mm][Ee]*"   
+alias vmr="vi *[Rr][Ee][Aa][Dd][Mm][Ee]*"   
+alias nvmr="vi README"   
+    
+alias via="vi ~/.aliases"   
+    
+
+
+    
+#     
+# EFF UP Protection   
+#     
+    
+alias rm="rm -i"   
+alias mv="mv -i"   
+    
+    
+#     
+# Typos    
+#     
+    
+alias mroe=more    
+alias sl=ls    
+alias ks=ls    
+alias clera=clear    
+alias cler=clear    
+alias arachen=arachne    
+alias ehad=head    
+alias histroy=history    
+alias remane=rename    
+alias bi=vi    
+    
+    
+#     
+# ls    
+#     
+# -C=list entries by columns 
+# -F=append indicator (one of */=@|)
+#     
+alias ls='ls -CF'  
+alias ll='ls -l'   
+alias la='ls -a'   
+alias lla='ls -al'   
+alias lg='ls -al | grep '
+alias lll='ll -L'
+alias l='ll'
+    
+
+
+#     
+# cd    
+#     
+alias '..'='cd ..'
+alias '...'='cd ../../'
+
+
