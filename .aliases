@@ -2,6 +2,10 @@
 # Aliases    
 #     
 
+# Stupid Microsoft Updates can't kill these jobs..
+alias MSupdate="ps -ef | grep -e \"Microsoft Database Daemon\" -e \"SyncServicesAgent\" | grep -v \"grep\" | awk '{pids=pids\" \"\$2} END {print \"kill -9 \" pids}'"
+
+
 # alias typos   
 alias alais="alias"
 alias alise="alias"
@@ -10,18 +14,26 @@ alias mc="mv"
 #
 # login
 #
-alias dkftp="echo \"thiculm94w22\" && echo \" \" && ssh twohlever@upload.clcbio.com" 
-alais bigmac="ssh -x cakelove@23.25.245.170"
+alias dkftp="ssh twohlever@upload.clcbio.com" 
 
 
 
 #
 # CLC
 #
+alias manGrep='function _manGrep(){ grep "$1" /Users/theresawohlever/eclipse/workspace/manual/trunk/manual/{*,*/*,*/*/*,*/*/*/*}.tex; }; _manGrep '
 
-alias GxServer="clcserver -U root -P 7777 -W default -S localhost"
+alias GxSudo="sudo /Applications/CLCGenomicsServer/current/CLCGenomicsServer" 
+alias GxSclt="clcserver -U root -P 7777 -W default -S localhost"
+alias get_pdfs.sh="/Users/theresawohlever/bin/download_pdfs.sh"
 
- 
+alias sshCust='ssh twohlever@customsol01-master'
+
+
+
+
+
+
 #     
 # Simple Shortcuts    
 #     
