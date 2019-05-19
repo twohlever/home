@@ -1,32 +1,47 @@
-#     
-# Aliases    
-#     
+#
+# Aliases
+#
 
 echo "Sourcing Aliases"; echo ""
 
 
 # Mac OS won't let me run an App but tries to convince me it's corrupt
-alias FixApp='sudo xattr -rd com.apple.quarantine'  ## <App Name>  
-
+alias FixApp='sudo xattr -rd com.apple.quarantine'  ## <App Name>
 
 # Stupid Microsoft Updates can't kill these jobs..
 alias MSupdate="ps -ef | grep -e \"Microsoft Database Daemon\" -e \"SyncServicesAgent\" | grep -v \"grep\" | awk '{pids=pids\" \"\$2} END {print \"kill -9 \" pids}'"
 
-
 # fix RDP connection issue by clearing DNS cache
 alias clearDNScache='sudo killall -HUP mDNSResponder'
 
-# alias typos   
+
+
+#
+# Typos
+#
+
 alias alais="alias"
 alias alise="alias"
 alias mc="mv"
 alias dc="cd"
 alias moer="more"
+alias mroe=more
+alias sl=ls
+alias ks=ls
+alias clera=clear
+alias cler=clear
+alias arachen=arachne
+alias ehad=head
+alias histroy=history
+alias remane=rename
+alias bi=vi
+
+
 
 #
 # login
 #
-alias dkftp="ssh twohlever@upload.clcbio.com" 
+alias dkftp="ssh twohlever@upload.clcbio.com"
 
 
 
@@ -34,7 +49,7 @@ alias dkftp="ssh twohlever@upload.clcbio.com"
 # CLC
 #
 alias get_pdfs.sh="$HOME/Dropbox/QIAGEN/bin/download_pdfs.sh"
-alias GxSudo="/Applications/CLCGenomicsServer/current/CLCGenomicsServer" 
+alias GxSudo="/Applications/CLCGenomicsServer/current/CLCGenomicsServer"
 alias GxSclt="clcserver -U root -P 7777 -W default -S localhost"
 
 alias sshCust='ssh twohlever@customsol01-master'
@@ -43,7 +58,9 @@ alias sshFda='ssh twohlever@customsol-fda01'
 
 alias Webstart='JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && export JAVA_HOME && /Applications/CLCWebStartAdministration/CLCWebStartAdministration '
 
+
 alias FixClcBlast="cd /Users/wohlevet/Library/Application\ Support/CLC\ bio/Workbench/home/LabCorpDev_75x/exec/mac-32 && cp -R /Applications/CLC_WB/CLC_GWB/GWB_10.1/exec/mac-32/* . "
+
 
 
 #
@@ -54,86 +71,69 @@ alias MonsantoGxSclt="/usr/local/clcservercmdline/CLT_2.5.1/clcserver -U root -P
 
 
 
-#     
-# Simple Shortcuts    
-#     
+#
+# Simple Shortcuts
+#
 
 alias vic="vi ~/.bashrc"
 
 alias scap="screencapture -s -t pdf ~/Desktop/ScreenCapture.pdf"
 alias scapt="screencapture -s -t pdf -T 3 ~/Desktop/ScreenCapture.pdf"
-    
-alias s="source ~/.bashrc"  
-    
-alias hm="history | more"  
-alias hg="history | grep"  
-    
+
+alias s="source ~/.bashrc"
+
+alias hm="history | more"
+alias hg="history | grep"
+
 alias lg="ll | grep "
-alias lls="ll" 
-alias ag="cat ~/.aliases | grep  " 
-    
+alias lls="ll"
+alias ag="cat ~/.aliases | grep  "
+
 
 alias p=pwd
-alias cls=clear    
+alias cls=clear
 alias c=clear
-alias lo=logout    
-alias e=exit    
-    
-alias m=more    
-alias mr="more *[Rr][Ee][Aa][Dd][Mm][Ee]*"   
-alias vmr="vi *[Rr][Ee][Aa][Dd][Mm][Ee]*"   
-alias nvmr="vi README"   
-    
-alias via="vi ~/.aliases"   
+alias lo=logout
+alias e=exit
+
+alias m=more
+alias mr="more *[Rr][Ee][Aa][Dd][Mm][Ee]*"
+alias vmr="vi *[Rr][Ee][Aa][Dd][Mm][Ee]*"
+alias nvmr="vi README"
+
+alias via="vi ~/.aliases"
 alias cia="vi ~/.aliases"
-    
 
 
-    
-#     
-# EFF UP Protection   
-#     
-    
-alias rm="rm -i"   
-alias mv="mv -i"   
-    
-    
-#     
-# Typos    
-#     
-    
-alias mroe=more    
-alias sl=ls    
-alias ks=ls    
-alias clera=clear    
-alias cler=clear    
-alias arachen=arachne    
-alias ehad=head    
-alias histroy=history    
-alias remane=rename    
-alias bi=vi    
-    
-    
-#     
-# ls    
-#     
-# -C=list entries by columns 
+
+#
+# EFF UP Protection
+#
+
+alias rm="rm -i"
+alias mv="mv -i"
+
+
+
+
+
+#
+# ls
+#
+# -C=list entries by columns
 # -F=append indicator (one of */=@|)
-#     
-alias ls='ls -CF'  
-alias ll='ls -l'   
-alias la='ls -a'   
-alias lla='ls -al'   
+#
+alias ls='ls -CF'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -al'
 alias lg='ls -al | grep '
 alias lll='ll -L'
 alias l='ll'
-    
 
 
-#     
-# cd    
-#     
+#
+# cd
+#
 alias '..'='cd ..'
 alias '...'='cd ../../'
-
-
