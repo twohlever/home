@@ -29,7 +29,7 @@ alias get_pdfs.sh="/Users/theresawohlever/bin/download_pdfs.sh"
 
 alias sshCust='ssh twohlever@customsol01-master'
 
-
+alias webStart="sudo /Applications/CLCWebStartAdministration start"
 
 
 
