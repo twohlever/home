@@ -2,10 +2,10 @@
 # set clean command prompt
 PS1="\n\t \$  "
 
+## source things that don't belong in a github commit
+source $HOME/.bashrc_secret
 
 # Homebrew
-# export HOMEBREW_GITHUB_API_TOKEN="40ddad25eef1b293a63bb1a9ec43e4820f29daf3"
-export HOMEBREW_GITHUB_API_TOKEN="815a0e3f58fd7088624652192bce48aa9f823f7f"
 export CPPFLAGS="-I/usr/local/opt/dyld-headers/include"
 
 
