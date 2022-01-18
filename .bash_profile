@@ -6,8 +6,6 @@ shopt -s histappend
 source $HOME/.bashrc
 
 
-
-
 # MacPorts Installer addition: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 

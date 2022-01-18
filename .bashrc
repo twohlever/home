@@ -5,8 +5,10 @@ PS1="\n\t \$  "
 ## source things that don't belong in a github commit
 source $HOME/.bashrc_secret
 
+
 # Homebrew
 export CPPFLAGS="-I/usr/local/opt/dyld-headers/include"
+brew update
 
 
 ##### PATH ####
@@ -16,14 +18,8 @@ path_tmp=`echo "$PATH" | /usr/bin/sed 's:/usr/local/bin\:::'`
 PATH="$HOME/bin:$HOME/Dropbox/QIAGEN/bin:/usr/local/bin:$path_tmp"
 
 
-# Add boost to PATH -- needed for tracy
-export PATH="/usr/local/opt/icu4c/bin:/usr/local/opt/icu4c/sbin:$PATH"
-export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include"
-
-
 # Add applications PATH
-PATH="/usr/local/assembly-cell/current:/usr/local/clcservercmdline/current:/usr/local/sratoolkit/current:/Applications/CLCGenomicsServer/current:/usr/texbin:/Applications/GenomicsCloudEngine/current:$HOME/Library/Python/2.7/bin:$PATH"
+PATH="/usr/local/sratoolkit/current:/usr/texbin:$HOME/Library/Python/2.7/bin:$PATH"
 export PATH
 
 
@@ -35,12 +31,19 @@ export PATH
 # Genomics Cloud Engine (GCE)
 export AWS_REGION="us-west-2"
 
+#
+# JAVA
+#
+export JAVA_10_HOME=$(/usr/libexec/java_home -v10)
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home"
+alias jdk10='export JAVA_HOME=$JAVA_10_HOME'
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
+export JAVA_HOME=`/usr/libexec/java_home`
 
-# JAVA Tools
+
 # PICARD="java -Xmx1024M -jar /Users/$USER/bin/picard/current/"
 # export PICARD
-
-export CLASSPATH=/usr/local/Cellar/varscan/2.3.7/share/java/VarScan.v2.3.7.jar:$CLASSPATH
+# export CLASSPATH=/usr/local/Cellar/varscan/2.3.7/share/java/VarScan.v2.3.7.jar:$CLASSPATH
 
 
 # set aliases

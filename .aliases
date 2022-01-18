@@ -20,6 +20,8 @@ alias clearDNScache='sudo killall -HUP mDNSResponder'
 # Typos
 #
 
+alias greo="grep"
+alias celar="clear"
 alias alais="alias"
 alias alise="alias"
 alias mc="mv"
@@ -59,7 +61,7 @@ alias sshFda='ssh twohlever@customsol-fda01'
 alias Webstart='JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && export JAVA_HOME && /Applications/CLCWebStartAdministration/CLCWebStartAdministration '
 
 
-alias FixClcBlast="cd /Users/wohlevet/Library/Application\ Support/CLC\ bio/Workbench/home/LabCorpDev_75x/exec/mac-32 && cp -R /Applications/CLC_WB/CLC_GWB/GWB_10.1/exec/mac-32/* . "
+alias FixClcBlast="cd /Users/wohlevet/Library/Application\ Support/CLC\ bio/Workbench/home/LabCorpDev_75x/exec/mac-32 && cp -R /Applications/CLC_GWB/GWB_12.0/exec/mac-64/* . "
 
 
 
