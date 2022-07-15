@@ -15,8 +15,14 @@ EXT_HD="/Volumes/Seagate"
 NAS_HD=""
 PICS="Pictures"
 
+BOOKS="Books"
+CALIBRE="CalibreLibrary"
+CALIBRE_PATH="${HOME}/${CALIBRE}"
+
+
 AD="Amazon Drive"
 LOCAL_AD="${HOME}/${AD}"
+LOCAL_AD_BOOKS="${LOCAL_AD}/${BOOKS}"
 LOCAL_AD_PICS="${LOCAL_AD}/${PICS}"
 EXT_HD_AD="${EXT_HD}/${AD}"
 NAS_HD_AD="${NAS_HD}/${AD}"
@@ -91,14 +97,28 @@ do
 done
 
 
+##
+## BOOKS
+##
+
+echo ""; echo ""; echo ""; echo "";
+echo "Backing up ${CALIBRE} ${BOOKS}"
+SOURCE="${CALIBRE_PATH}/"
+DEST="${LOCAL_AD_BOOKS}/${CALIBRE}/"
+echo "${SYNC_CMD} ${SOURCE} ${DEST}"
+${SYNC_CMD} "${SOURCE}" "${DEST}"
+
+
 
 ##
 ## Backing up all other data
 ##
 echo ""; echo ""; echo ""; echo "";
 date
-echo "Done backing up ${AD} ${PICS}. Backing up all other ${AD} data."
+echo "Done backing up ${AD} ${PICS} & ${Books}. Backing up all other ${AD} data."
 echo ""; echo "";
+
+
 
 for sub in `ls -1 "${LOCAL_AD}/" | grep -v -e ${PICS} -e "Icon" `
 do
