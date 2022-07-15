@@ -132,5 +132,8 @@ ${SYNC_CMD} "${SOURCE}" "${DEST}"
 # echo "${SYNC_CMD} ${SOURCE} ${DEST}"
 # ${SYNC_CMD} "${SOURCE}" "${DEST}"
 
-echo "Full Backup Done!"
+
+
+echo ""; echo ""; echo ""; echo "";
 date
+echo "Full Backup Done!"
