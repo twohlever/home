@@ -11,8 +11,8 @@ LAST_MONTH="$(printf "%02d" $((${THIS_MONTH}-1)))"
 ##
 ## Backup paths
 ##
-EXT_HD="/Volumes/Seagate"
-NAS_HD=""
+EXT_HD_SG_SG="/Volumes/Seagate"
+EXT_HD_SG_WD="/Volumes/WesternDigital"
 PICS="Pictures"
 
 BOOKS="Books"
@@ -24,13 +24,13 @@ AD="Amazon Drive"
 LOCAL_AD="${HOME}/${AD}"
 LOCAL_AD_BOOKS="${LOCAL_AD}/${BOOKS}"
 LOCAL_AD_PICS="${LOCAL_AD}/${PICS}"
-EXT_HD_AD="${EXT_HD}/${AD}"
-NAS_HD_AD="${NAS_HD}/${AD}"
+EXT_HD_SG_AD="${EXT_HD_SG}/${AD}"
+EXT_HD_WD_AD="${EXT_HD_WD}/${AD}"
 
 GD="Google Drive"
 LOCAL_GD="${HOME}/${GD}"
-EXT_HD_GD="${EXT_HD}/${GD}"
-NAS_HD_GD="${NAS_HD}/${GD}"
+EXT_HD_SG_GD="${EXT_HD_SG}/${GD}"
+EXT_HD_WD_GD="${EXT_HD_WD}/${GD}"
 
 
 
@@ -79,7 +79,7 @@ do
   echo ""; echo ""; echo "";
   echo $day_dir
   SOURCE="${LOCAL_AD_PICS}/${THIS_YEAR}/${day_dir}"
-  DEST="${EXT_HD_AD}/${PICS}/${THIS_YEAR}/${day_dir}"
+  DEST="${EXT_HD_SG_AD}/${PICS}/${THIS_YEAR}/${day_dir}"
   echo "${SYNC_CMD} ${SOURCE} ${DEST}"
   ${SYNC_CMD} "${SOURCE}" "${DEST}"
 
@@ -93,7 +93,8 @@ do
   echo ""; echo ""; echo "";
   echo "${year}"
   echo "Copying over ${year} to External Hard drive..."
-  ${CP_CMD} "${LOCAL_AD_PICS}/${year}/" "${EXT_HD_AD}//${PICS}/${year}/"
+  ${CP_CMD} "${LOCAL_AD_PICS}/${year}/" "${EXT_HD_SG_AD}/${PICS}/${year}/"
+  ${CP_CMD} "${LOCAL_AD_PICS}/${year}/" "${EXT_HD_WD_AD}/${PICS}/${year}/"
 done
 
 
@@ -125,7 +126,12 @@ do
   echo ""; echo ""; echo "";
   echo "${sub}"
   SOURCE="${LOCAL_AD}/${sub}/"
-  DEST="${EXT_HD_AD}/${sub}/"
+
+  DEST="${EXT_HD_SG_AD}/${sub}/"
+  echo "${SYNC_CMD} ${SOURCE} ${DEST}"
+  ${SYNC_CMD} "${SOURCE}" "${DEST}"
+
+  DEST="${EXT_HD_WD_AD}/${sub}/"
   echo "${SYNC_CMD} ${SOURCE} ${DEST}"
   ${SYNC_CMD} "${SOURCE}" "${DEST}"
 done
@@ -138,19 +144,15 @@ date
 echo "Done backing up ${AD} data. Backing up all ${GD} data."
 echo ""; echo "";
 SOURCE="${LOCAL_GD}/"
-DEST="${EXT_HD_GD}/"
+DEST="${EXT_HD_SG_GD}/"
 echo "${SYNC_CMD} ${SOURCE} ${DEST}"
 ${SYNC_CMD} "${SOURCE}" "${DEST}"
 
 
-#
-# External hard drive to Network Storage
-#
-#SOURCE="${EXT_HD_AD}/"
-#DEST="${NAS_AD}/"
-#echo ""; echo ""; echo "";
-# echo "${SYNC_CMD} ${SOURCE} ${DEST}"
-# ${SYNC_CMD} "${SOURCE}" "${DEST}"
+DEST="${EXT_HD_WD_GD}/"
+echo "${SYNC_CMD} ${SOURCE} ${DEST}"
+${SYNC_CMD} "${SOURCE}" "${DEST}"
+
 
 
 
