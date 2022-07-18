@@ -11,10 +11,10 @@ LAST_MONTH="$(printf "%02d" $((${THIS_MONTH}-1)))"
 ##
 ## Backup paths
 ##
-EXT_HD_SG_SG="/Volumes/Seagate"
-EXT_HD_SG_WD="/Volumes/WesternDigital"
-PICS="Pictures"
+EXT_HD_SG="/Volumes/Seagate"
+EXT_HD_WD="/Volumes/WesternDigital"
 
+PICS="Pictures"
 BOOKS="Books"
 CALIBRE="CalibreLibrary"
 CALIBRE_PATH="${HOME}/${CALIBRE}"
@@ -24,11 +24,13 @@ AD="Amazon Drive"
 LOCAL_AD="${HOME}/${AD}"
 LOCAL_AD_BOOKS="${LOCAL_AD}/${BOOKS}"
 LOCAL_AD_PICS="${LOCAL_AD}/${PICS}"
+
 EXT_HD_SG_AD="${EXT_HD_SG}/${AD}"
 EXT_HD_WD_AD="${EXT_HD_WD}/${AD}"
 
 GD="Google Drive"
 LOCAL_GD="${HOME}/${GD}"
+
 EXT_HD_SG_GD="${EXT_HD_SG}/${GD}"
 EXT_HD_WD_GD="${EXT_HD_WD}/${GD}"
 
@@ -79,7 +81,12 @@ do
   echo ""; echo ""; echo "";
   echo $day_dir
   SOURCE="${LOCAL_AD_PICS}/${THIS_YEAR}/${day_dir}"
+
   DEST="${EXT_HD_SG_AD}/${PICS}/${THIS_YEAR}/${day_dir}"
+  echo "${SYNC_CMD} ${SOURCE} ${DEST}"
+  ${SYNC_CMD} "${SOURCE}" "${DEST}"
+
+  DEST="${EXT_HD_WD_AD}/${PICS}/${THIS_YEAR}/${day_dir}"
   echo "${SYNC_CMD} ${SOURCE} ${DEST}"
   ${SYNC_CMD} "${SOURCE}" "${DEST}"
 
@@ -116,7 +123,7 @@ ${SYNC_CMD} "${SOURCE}" "${DEST}"
 ##
 echo ""; echo ""; echo ""; echo "";
 date
-echo "Done backing up ${AD} ${PICS} & ${Books}. Backing up all other ${AD} data."
+echo "Done backing up ${AD} ${PICS} & ${BOOKS}. Backing up all other ${AD} data."
 echo ""; echo "";
 
 
