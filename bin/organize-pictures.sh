@@ -22,16 +22,17 @@ LOG_FILE="${LOG_DIR}/${LOG_DATE}.sortphotos.log"
 # Do the thing
 #
 echo ""
-echo "Begining to organize Pictures!! YAY!"
+echo "Begining to organize Pictures!"
 date
 echo "Moving Photo files from Amazon to Desktop Photo folder..."
 ## move all new photos to the "ORIG_PHOTO_DIR"
 rsync -aPz --remove-source-files \
-   "${AD_PIC_DIR}/iPhone-TAW/" \
-   "${AD_PIC_DIR}/iPad-TAW/" \
-   "${AD_PIC_DIR}/Theresa’s iPad/" \
+   "${AD_PIC_DIR}/Theresa's iPad/" \
    "${AD_PIC_DIR}/Matt Wohlever’s iPhone/" \
    "${ORIG_PHOTO_DIR}/"
+
+   #   "${AD_PIC_DIR}/iPhone-TAW/" \
+   #   "${AD_PIC_DIR}/iPad-TAW/" \
 echo ""
 
 #### https://github.com/twohlever/sortphotos
