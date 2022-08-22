@@ -141,8 +141,12 @@ done
 for year in `ls -1 "${LOCAL_AD_PICS}/" | grep 20 | grep -v "${THIS_YEAR}" `
 do
   echo ""; echo ""; echo "";
-  echo "${year}"
-  echo "Copying over ${year} to External Hard drives..."
+  echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
+  echo " Copying over "
+  echo "     +++++  ${year} +++++"
+  echo "                to External Hard Drives"
+  echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
+
 
   echo "${CP_CMD} \"${LOCAL_AD_PICS}/${year}/\" \"${EXT_HD_SG_AD}/${PICS}/${year}/"
   ${CP_CMD} "${LOCAL_AD_PICS}/${year}/" "${EXT_HD_SG_AD}/${PICS}/${year}/"
