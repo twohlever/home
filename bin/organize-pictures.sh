@@ -27,12 +27,13 @@ date
 echo "Moving Photo files from Amazon to Desktop Photo folder..."
 ## move all new photos to the "ORIG_PHOTO_DIR"
 rsync -aPz --remove-source-files \
-   "${AD_PIC_DIR}/Theresa's iPad/" \
+   "${AD_PIC_DIR}/iPhone-TAW/" \
+   "${AD_PIC_DIR}/iPad-TAW/" \
    "${AD_PIC_DIR}/Matt Wohlever’s iPhone/" \
    "${ORIG_PHOTO_DIR}/"
 
-   #   "${AD_PIC_DIR}/iPhone-TAW/" \
-   #   "${AD_PIC_DIR}/iPad-TAW/" \
+#    "${AD_PIC_DIR}/Theresa's iPad/" \
+
 echo ""
 
 #### https://github.com/twohlever/sortphotos
