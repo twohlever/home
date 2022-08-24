@@ -15,7 +15,7 @@ SYNC_CMD="${BREW_BIN}/rclone sync -P" ## https://rclone.org/commands/rclone_sync
 ##
 THIS_YEAR=$(date "+%Y")
 THIS_MONTH=$(date "+%0m")
-LAST_MONTH="$(printf "%02d" $((${THIS_MONTH}-1)))"
+LAST_MONTH=$(printf "%02d" $(( $(echo "${THIS_MONTH}" | sed 's/^0*//')-1)))
 
 
 ##
