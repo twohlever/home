@@ -36,9 +36,10 @@ CALIBRE_PATH="${HOME}/${CALIBRE}"
 ## 137448	Theresa_Career
 ## 22841848	WohleverConsulting
 MIN_SYNC_SIZE=13600 ## smallest One Drive subdir as of 26 Sept. 2022
-MIN_SYNC_SIZE_BOOKS=4460400       ## 4460560	Books
-MIN_SYNC_SIZE_DOCS=9943700        ## 9943864	Documents
-MIN_SYNC_SIZE_GD=483000         	 ## 483104	/Users/theresawohlever/Google Drive/
+MIN_SYNC_SIZE_Calibre=1782400    ## 1782504	/Users/theresawohlever/CalibreLibrary/
+MIN_SYNC_SIZE_BOOKS=4460400      ## 4460560	Books
+MIN_SYNC_SIZE_DOCS=9943700       ## 9943864	Documents
+MIN_SYNC_SIZE_GD=483000          ## 483104	/Users/theresawohlever/Google Drive/
 
 
 AD="Amazon Drive" ## Photos & Videos
@@ -238,7 +239,7 @@ date
 echo "Backing up ${CALIBRE} ${BOOKS}"
 echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
 echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
-is_syncable_size_f "${MIN_SYNC_SIZE_BOOKS}" "${CALIBRE_PATH}/"
+is_syncable_size_f "${MIN_SYNC_SIZE_Calibre}" "${CALIBRE_PATH}/"
 if [[ $? -eq 0 ]]
 then
   sync_f "${CALIBRE_PATH}/" "${LOCAL_OD_BOOKS}/${CALIBRE}/"
