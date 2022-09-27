@@ -7,6 +7,7 @@ HOME_DIR='/Users/theresawohlever'
 AD_PIC_DIR="${HOME_DIR}/Amazon Drive/Pictures"
 GIT_REPO_DIR="${HOME_DIR}/git_repos"
 
+APPLE_PHOTO_DIR="${HOME_DIR}/Pictures/Photos Library.photoslibrary/originals"
 
 ORIG_PHOTO_DIR="${HOME_DIR}/Desktop/Photos"
 DEST_PHOTO_DIR="${AD_PIC_DIR}"
@@ -24,6 +25,11 @@ LOG_FILE="${LOG_DIR}/${LOG_DATE}.sortphotos.log"
 echo ""
 echo "Begining to organize Pictures!"
 date
+
+echo "Copying recently modified Apple Photo Library Originals fpr Desktop Photo folder..."
+find ${APPLE_PHOTO_DIR} -type f -mtime -3  -exec rsync -aPz {} ~/Desktop/Photos/  \;
+
+
 echo "Moving Photo files from Amazon to Desktop Photo folder..."
 ## move all new photos to the "ORIG_PHOTO_DIR"
 rsync -aPz --remove-source-files \
