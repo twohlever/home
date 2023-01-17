@@ -27,7 +27,7 @@ echo "Begining to organize Pictures!"
 date
 
 echo "Copying recently modified Apple Photo Library Originals fpr Desktop Photo folder..."
-find ${APPLE_PHOTO_DIR} -type f -mtime -3  -exec rsync -aPz {} ~/Desktop/Photos/  \;
+find "${APPLE_PHOTO_DIR}" -type f -mtime -3  -exec rsync -aPz {} ~/Desktop/Photos/  \;
 
 
 echo "Moving Photo files from Amazon to Desktop Photo folder..."
@@ -35,7 +35,7 @@ echo "Moving Photo files from Amazon to Desktop Photo folder..."
 rsync -aPz --remove-source-files \
    "${AD_PIC_DIR}/iPhone-TAW/" \
    "${AD_PIC_DIR}/iPad-TAW/" \
-   "${AD_PIC_DIR}/Matt Wohlever’s iPhone/" \
+   "${AD_PIC_DIR}/Matt Wohlever's iPhone/" \
    "${ORIG_PHOTO_DIR}/"
 
 #    "${AD_PIC_DIR}/Theresa's iPad/" \

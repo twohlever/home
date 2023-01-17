@@ -36,7 +36,7 @@ CALIBRE_PATH="${HOME}/${CALIBRE}"
 ## 137448	Theresa_Career
 ## 22841848	WohleverConsulting
 MIN_SYNC_SIZE=13600 ## smallest One Drive subdir as of 26 Sept. 2022
-MIN_SYNC_SIZE_Calibre=1782400    ## 1782504	/Users/theresawohlever/CalibreLibrary/
+MIN_SYNC_SIZE_Calibre=1680000    ## 1782504	/Users/theresawohlever/CalibreLibrary/
 MIN_SYNC_SIZE_BOOKS=4460400      ## 4460560	Books
 MIN_SYNC_SIZE_DOCS=9943700       ## 9943864	Documents
 MIN_SYNC_SIZE_GD=483000          ## 483104	/Users/theresawohlever/Google Drive/
@@ -111,11 +111,10 @@ is_syncable_size_f (){
   fi
 
   _PATH=${2}
-  _SIZE=$(du -d 0 ${_PATH} | cut -f 1 )
+  _SIZE=$(du -d 0 "${_PATH}" | cut -f 1 )
 
-  echo "Is ${_SIZE} for ${_PATH} "
-  echo "   large enough (${_MIN_SYNC_SIZE})"
-  echo "          to sync safely?"
+  echo "Is ${_SIZE}. > ${_MIN_SYNC_SIZE}."
+  echo "for  syncing ${_PATH} safely?"
 
   if [[ ${_SIZE} -gt ${_MIN_SYNC_SIZE} ]]; then
       return 0;
