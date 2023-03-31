@@ -34,14 +34,14 @@ SOFTWARE="Software"
 
 
 ## Set minimum sync size so we don't unintentionally delete all the backups
-## Values based on du run 26 Sept. 2022
+## Values based on `du -d 0` run 26 Sept. 2022
 ## 137448	Theresa_Career
 ## 22841848	WohleverConsulting
 MIN_SYNC_SIZE=13600 ## smallest One Drive subdir as of 26 Sept. 2022
-MIN_SYNC_SIZE_Calibre=1680000    ## 1782504	/Users/theresawohlever/CalibreLibrary/
-MIN_SYNC_SIZE_BOOKS=3374000      ## 4460560	Books
-MIN_SYNC_SIZE_DOCS=9943700       ## 9943864	Documents
-MIN_SYNC_SIZE_GD=483000          ## 483104	/Users/theresawohlever/Google Drive/
+MIN_SYNC_SIZE_Calibre=2300000    ## 2304328 /Users/theresawohlever/CalibreLibrary/
+MIN_SYNC_SIZE_BOOKS=$(( ${MIN_SYNC_SIZE_Calibre} + 1190000 ))      ## 4460560	Books
+MIN_SYNC_SIZE_DOCS=9943000       ## 9943864	Documents
+MIN_SYNC_SIZE_GD=482000          ## 483104	/Users/theresawohlever/Google Drive/
 
 
 AD="Amazon Drive" ## Photos & Videos
@@ -59,7 +59,7 @@ EXT_HD_WD_OD="${EXT_HD_WD}/${OD}"
 
 
 GD="Google Drive" ## Editable/shareable documents
-LOCAL_GD="${HOME}/${GD}"
+LOCAL_GD='/Users/theresawohlever/Library/CloudStorage/GoogleDrive-theresa.wohlever@gmail.com/My Drive'  ##"${HOME}/${GD}"
 EXT_HD_SG_GD="${EXT_HD_SG}/${GD}"
 EXT_HD_WD_GD="${EXT_HD_WD}/${GD}"
 
