@@ -25,6 +25,7 @@ LAST_MONTH=$(printf "%02d" $(( $(echo "${THIS_MONTH}" | sed 's/^0*//')-1)))
 EXT_HD_SG="/Volumes/Seagate"
 EXT_HD_WD="/Volumes/WesternDigital/WohleverFam"
 
+MUSIC="Music"
 PICS="Pictures"
 BOOKS="Books"
 CALIBRE="CalibreLibrary"
@@ -42,7 +43,10 @@ MIN_SYNC_SIZE_Calibre=2300000    ## 2304328 /Users/theresawohlever/CalibreLibrar
 MIN_SYNC_SIZE_BOOKS=$(( ${MIN_SYNC_SIZE_Calibre} + 1190000 ))      ## 4460560	Books
 MIN_SYNC_SIZE_DOCS=9943000       ## 9943864	Documents
 MIN_SYNC_SIZE_GD=482000          ## 483104	/Users/theresawohlever/Google Drive/
+MIN_SYNC_SIZE_MUSIC=32300000
 
+
+MUSIC_PATH="${HOME}/Music"
 
 AD="Amazon Drive" ## Photos & Videos
 LOCAL_AD="${HOME}/${AD}"
@@ -256,6 +260,27 @@ if [[ $? -eq 0 ]]
 then
   sync_f "${CALIBRE_PATH}/" "${LOCAL_OD_BOOKS}/${CALIBRE}/"
 fi
+
+
+
+
+##
+## MUSIC
+##
+
+
+echo ""; echo ""; echo ""; echo "";
+date
+echo "Backing up ${MUSIC} from ${MUSIC_PATH}"
+echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
+echo "=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-==-=-=-="
+is_syncable_size_f "${MIN_SYNC_SIZE_MUSIC}" "${MUSIC_PATH}/"
+if [[ $? -eq 0 ]]
+then
+  sync_f "${MUSIC_PATH}/" "${EXT_HD_SG}/${MUSIC}"
+  sync_f "${MUSIC_PATH}/" "${EXT_HD_WD}/${MUSIC}"
+fi
+
 
 
 ##
